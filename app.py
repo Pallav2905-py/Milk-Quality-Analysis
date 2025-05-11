@@ -27,7 +27,7 @@ class MilkData(BaseModel):
     pH: float = Field(..., ge=3.0, le=14, description="pH value between 3.0 and 9.5")
     Temprature: float = Field(..., ge=5.0, le=90.0, description="Temperature in Celsius between 34°C and 90°C")
     Odor: int = Field(..., ge=0, le=1, description="Methane detected (1=Present, 0=Not present)")
-    Colour: int = Field(..., ge=0, le=255, description="Color value in RGB scale (240-255)")
+    Colour: int = Field(..., ge=0, le=2550, description="Color value in RGB scale (240-255)")
 
 def get_explanation(prediction: str, data: MilkData) -> str:
     prompt = (
